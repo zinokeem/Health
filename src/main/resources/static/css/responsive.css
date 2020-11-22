@@ -1,0 +1,44 @@
+@charset "EUC-KR";
+
+@media ( max-width: 768px ) {
+	div#wrap {
+		width : 100%;
+	}
+	div.context {
+  		width : 100%;
+  	}
+}
+
+@media ( min-width: 768px ) {
+	div#wrap {
+		width : 750px;
+	}
+	div.context {
+		width : 700px;
+  	}
+}
+
+@media ( min-width: 1024px ) {
+	div#wrap {
+		width : 950px;
+	}
+	div.context {
+		width : 900px;
+  	}
+}
+
+div#wrap {
+	height: 500px;
+    border: 1px solid black;
+    margin: 10px auto;
+    padding: 35px 0px;
+}
+
+div.context {
+    height: 200px;
+    padding: 20px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
