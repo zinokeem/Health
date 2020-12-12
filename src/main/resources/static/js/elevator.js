@@ -2,7 +2,7 @@
  * 
  */
 
-let count = 7; // 총 층수
+let count; // 총 층수
 var currentFloor = 1; // 현재 층
 
 function eventHandler() {
@@ -35,6 +35,8 @@ function eventHandler() {
 	$('div#buttons input.floor').change(function(e) {
 		var target = $(this);
 		var value = target.val();
+		count = value;
+		initFloor();
 		console.log(value);
 	});
 }
