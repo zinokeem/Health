@@ -5,6 +5,18 @@
 let count = 100; // 총 층수
 var currentFloor = 7; // 현재 층
 
+function refresh() {
+	$.ajax({
+			type: "GET",
+			url: "/init",
+			data: null
+		}).done(function(result) {
+			console.log(result);
+		}).fail(function(result) {
+			console.log(result);
+		});
+}
+
 function eventHandler() {
 	$('div#buttons input.up').click(function() {
 		if (currentFloor < count) {
@@ -68,4 +80,5 @@ function moveFloor(index) {
 $(document).ready(function () {
 	initFloor();
 	eventHandler();
+	setInterval(refresh, 1000);
 });

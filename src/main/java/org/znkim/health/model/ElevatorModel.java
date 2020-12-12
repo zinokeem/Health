@@ -4,6 +4,7 @@ public class ElevatorModel {
 	int status; // -1은 내려감, 0은 중립, 1은 올라가고 있음
 	int floorCount; // 건물의 층수
 	int currentFloor; // 현재 엘리베이터의 층
+	int min,max;
 	String data; // 기타 데이터
 	
 	public int getStatus() {
@@ -29,5 +30,17 @@ public class ElevatorModel {
 	}
 	public void setData(String data) {
 		this.data = data;
+	}
+	public int getMin() {
+		return min;
+	}
+	public void setMin(int min) {
+		this.min = min;
+	}
+	public int getMax() {
+		return max;
+	}
+	public void setMax(int max) {
+		this.max = max;
 	}
 }
