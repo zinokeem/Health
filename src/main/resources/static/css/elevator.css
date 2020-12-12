@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+body {
+	background-color : #2f2f2f;
+}
+
+div#wrap {
+	width : 200px;
+	height : auto;	
+	margin : 15px auto;
+}
+
+table.elevator {
+	width : 75px;
+	margin : 0 auto;
+}
+
+table.elevator th {
+	width : 100px;
+	height : 40px;
+	border : 1px solid grey;
+	text-align: center;
+}
+
+table.elevator td {
+	height: 60px;
+	padding: 5px 0px;
+    border: 1px solid #7d7d7d;
+    text-align: center;
+    color: #d8d8d8;
+}

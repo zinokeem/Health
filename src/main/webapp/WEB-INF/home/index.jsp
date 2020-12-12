@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Hello World</title>
 <link rel="stylesheet" href="/css/default.css"/>
 <link rel="stylesheet" href="/css/responsive.css"/>
@@ -13,15 +13,15 @@
 <body>
 	<div id="wrap">
 		<div class="context">
-			1RM °è»ê : 
+			1RM ê³„ì‚° : 
 			<input type="text" id="weight" value="100"/>
 			<select id="repsBox">
 			</select>
-			<button id="submit">¿Ï·á</button>
+			<button id="submit">ì™„ë£Œ</button>
 			<input type="text" id="result"/>
 		</div>
 		<div class="context">
-			³»¿ë ÀÔ·Â2
+			ë‚´ìš© ìž…ë ¥2
 		</div>
 	</div>
 </body>

@@ -11,4 +11,9 @@ public class fortest {
 	public String index() {
 		return "index";
 	}
+	
+	@GetMapping("/elevator")
+	public String elevator() {
+		return "elevator";
+	}
 }
