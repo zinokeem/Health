@@ -7,14 +7,14 @@ var currentFloor = 7; // 현재 층
 
 function refresh() {
 	$.ajax({
-			type: "GET",
-			url: "/init",
-			data: null
-		}).done(function(result) {
-			console.log(result);
-		}).fail(function(result) {
-			console.log(result);
-		});
+		type: "GET",
+		url: "/init",
+		data: null
+	}).done(function(result) {
+		console.log(result);
+	}).fail(function(result) {
+		console.log(result);
+	});
 }
 
 function eventHandler() {
