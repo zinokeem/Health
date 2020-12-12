@@ -11,11 +11,6 @@ function eventHandler() {
 			currentFloor++;
 			moveFloor(count-currentFloor);
 		}
-		
-		var target = $('.elevator tbody').find('td.on');
-		$('html').stop().animate({
-	    	scrollTop: target.offset().top - ($(window).height() / 2)
-		},500);
 	});
 	
 	$('div#buttons input.down').click(function() {
@@ -23,18 +18,13 @@ function eventHandler() {
 			currentFloor--;
 			moveFloor(count-currentFloor);
 		}
-		
-		var target = $('.elevator tbody').find('td.on');
-		$('html').stop().animate({
-	    	scrollTop: target.offset().top - ($(window).height() / 2)
-		},500);
 	});
 	
 	$('div#buttons input.excute').click(function() {
 		$.ajax({
-			type: "GET",
+			type: "POST",
 			url: "/test",
-			data: null
+			data: {param:"hi"}
 		}).done(function(result) {
 			console.log("성공");
 		}).fail(function(result) {
@@ -55,16 +45,24 @@ function initFloor() {
 	var target = $('.elevator tbody');
 	target.children().remove();
 	for (var i = count; i > 0; i--) {
-		target.append("<tr><td>" + i + "층</td></tr>");
+		target.append("<tr><td>" + i + "층</td><td>대기 인원</td></tr>");
 	}
 	currentFloor = 1;
-	moveFloor(count-1)
+	setFloorPosition(count-1)
+}
+
+function setFloorPosition(index) {
+	var targets = $('.elevator tbody').find('tr');
+	targets.removeClass("on");
+	targets.eq(index).first().addClass("on");
 }
 
 function moveFloor(index) {
-	var targets = $('.elevator tbody').find('td');
-	targets.removeClass("on");
-	targets.eq(index).addClass("on");
+	setFloorPosition(index);
+	var target = $('.elevator tbody').find('tr.on');
+	$('html').stop().animate({
+    	scrollTop: target.offset().top - ($(window).height() / 2)
+	},500);
 }
 
 $(document).ready(function () {

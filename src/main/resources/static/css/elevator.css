@@ -21,13 +21,13 @@ div#buttons input[type="button"] {
 }
 
 div#wrap {
-	width : 200px;
+	width : 300px;
 	height : auto;	
 	margin : 15px auto;
 }
 
 table.elevator {
-	width : 75px;
+	width : 300px;
 	margin : 0 auto;
 }
 
@@ -46,6 +46,6 @@ table.elevator td {
     color: #d8d8d8;
 }
 
-td.on {
+tr.on {
 	background-color : red;
 }

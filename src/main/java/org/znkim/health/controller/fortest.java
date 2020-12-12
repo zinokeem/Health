@@ -8,11 +8,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.znkim.health.biz.ElevatorLogic;
+import org.znkim.health.model.ElevatorModel;
 
 @Controller
 public class fortest {
+	
+	ElevatorLogic el = new ElevatorLogic();
 	
 	@GetMapping("/")
 	public String index() {
@@ -24,16 +28,17 @@ public class fortest {
 		return "elevator";
 	}
 	
-	@RequestMapping(value = "/test" , method = RequestMethod.GET)
+	@RequestMapping(value = "/init" , method = RequestMethod.GET)
 	@ResponseBody
-	public String test() {
+	public ElevatorModel getServerData() {
 		ElevatorLogic el = new ElevatorLogic();
+		return el.getServerData();
+	}
+	
+	@RequestMapping(value = "/test" , method = RequestMethod.POST)
+	@ResponseBody
+	public ElevatorModel excute(/*@RequestParam String param*/) {
 		el.excute();
-		
-		/*TestModel model = new TestModel();
-		model.setData("hello");
-
-		return model;*/
-		return "hello";
+		return el.getServerData();
 	}
 }
