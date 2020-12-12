@@ -8,7 +8,7 @@ div#buttons {
 	width: 200px;
     height: 300px;
     margin: 10px;
-    position: absolute;
+    position: fixed;
     /* top: 22px; */
     background-color: #00000082;
     border-radius: 8px;
