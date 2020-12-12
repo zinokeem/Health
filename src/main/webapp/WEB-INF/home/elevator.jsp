@@ -15,6 +15,7 @@
 		<input class="up" type="button" value="UP"/>
 		<input class="down" type="button" value="DOWN"/>
 		<input class="excute" type="button" value="excute"/>
+		<input class="floor" type="text" value ="0"/>
 	</div>
 	<div id="wrap">
 		<table class="elevator">
@@ -24,15 +25,6 @@
 				</tr>
 			</thead>-->
 			<tbody>
-				<tr>
-					<td>3</td>
-				</tr>
-				<tr>
-					<td>2</td>
-				</tr>
-				<tr>
-					<td>1</td>
-				</tr>
 			</tbody>
 		</table>
 	</div>
