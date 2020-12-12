@@ -42,7 +42,7 @@ function initFloor() {
 		target.append("<tr><td>" + i + "층</td></tr>");
 	}
 	currentFloor = 1;
-	moveFloor(7-1)
+	moveFloor(count-1)
 }
 
 function moveFloor(index) {
