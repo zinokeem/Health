@@ -2,8 +2,8 @@
  * 
  */
 
-let count; // 총 층수
-var currentFloor = 1; // 현재 층
+let count = 100; // 총 층수
+var currentFloor = 7; // 현재 층
 
 function eventHandler() {
 	$('div#buttons input.up').click(function() {
@@ -11,6 +11,11 @@ function eventHandler() {
 			currentFloor++;
 			moveFloor(count-currentFloor);
 		}
+		
+		var target = $('.elevator tbody').find('td.on');
+		$('html').animate({
+	    	scrollTop: target.offset().top
+		},500);
 	});
 	
 	$('div#buttons input.down').click(function() {
@@ -18,13 +23,18 @@ function eventHandler() {
 			currentFloor--;
 			moveFloor(count-currentFloor);
 		}
+		
+		var target = $('.elevator tbody').find('td.on');
+		$('html').animate({
+	    	scrollTop: target.offset().top
+		},500);
 	});
 	
 	$('div#buttons input.excute').click(function() {
 		$.ajax({
+			type: "GET",
 			url: "/test",
-		    type: "GET", 
-			dataType: "text"
+			data: null
 		}).done(function(result) {
 			console.log("성공");
 		}).fail(function(result) {
