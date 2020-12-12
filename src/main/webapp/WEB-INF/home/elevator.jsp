@@ -11,6 +11,10 @@
 <script type="text/javascript" src="/js/elevator.js"></script>
 </head>
 <body>
+	<div id="buttons">
+		<input class="up" type="button" value="UP"/>
+		<input class="down" type="button" value="DOWN"/>
+	</div>
 	<div id="wrap">
 		<table class="elevator">
 			<!--<thead>
