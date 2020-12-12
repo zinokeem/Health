@@ -13,8 +13,8 @@ function eventHandler() {
 		}
 		
 		var target = $('.elevator tbody').find('td.on');
-		$('html').animate({
-	    	scrollTop: target.offset().top
+		$('html').stop().animate({
+	    	scrollTop: target.offset().top - ($(window).height() / 2)
 		},500);
 	});
 	
@@ -25,8 +25,8 @@ function eventHandler() {
 		}
 		
 		var target = $('.elevator tbody').find('td.on');
-		$('html').animate({
-	    	scrollTop: target.offset().top
+		$('html').stop().animate({
+	    	scrollTop: target.offset().top - ($(window).height() / 2)
 		},500);
 	});
 	
