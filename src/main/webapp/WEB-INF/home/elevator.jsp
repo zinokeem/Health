@@ -14,6 +14,7 @@
 	<div id="buttons">
 		<input class="up" type="button" value="UP"/>
 		<input class="down" type="button" value="DOWN"/>
+		<input class="excute" type="button" value="excute"/>
 	</div>
 	<div id="wrap">
 		<table class="elevator">

@@ -2,8 +2,8 @@
  * 
  */
 
-let count = 7;
-var currentFloor = 1;
+let count = 7; // 총 층수
+var currentFloor = 1; // 현재 층
 
 function eventHandler() {
 	$('div#buttons input.up').click(function() {
@@ -18,6 +18,20 @@ function eventHandler() {
 			currentFloor--;
 			moveFloor(count-currentFloor);
 		}
+	});
+	
+	$('div#buttons input.excute').click(function() {
+		$.ajax({
+			url: "/test", // 클라이언트가 요청을 보낼 서버의 URL 주소
+		    data: "", // HTTP 요청과 함께 서버로 보낼 데이터
+		    type: "GET", // HTTP 요청 방식(GET, POST)
+		    //dataType: "json"
+			dataType: "text"
+		}).done(function(result) {
+			console.log("성공");
+		}).fail(function(result) {
+			console.log("실패");
+		});
 	});
 }
 
