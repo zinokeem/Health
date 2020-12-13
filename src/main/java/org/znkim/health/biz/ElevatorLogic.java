@@ -51,12 +51,13 @@ public class ElevatorLogic {
 		int currentFloor = model.getCurrentFloor();
 		if (status == 1) {
 			for (int i = currentFloor; i <= max; i++) {
-				
+				model.setCurrentFloor(i);
 			}
 		} else if(status == -1) {
 			for (int i = currentFloor; i >= min; i--) {
-					
+				model.setCurrentFloor(i);
 			}
 		}
 	}
+
 }
