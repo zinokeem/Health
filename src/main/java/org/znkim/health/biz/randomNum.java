@@ -4,7 +4,6 @@ public class randomNum{
 	public int perposeFloorNum(int countFloor) {
 		Random random1 = new Random();
 		return random1.nextInt(countFloor)+1;
-	 
 	}
 	public int waitFloorNum(int countFloor) {
 		Random random2 = new Random();
