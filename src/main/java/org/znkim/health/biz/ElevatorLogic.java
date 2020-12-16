@@ -55,11 +55,18 @@ public class ElevatorLogic {
 		if (status == 1) {
 			for (int i = currentFloor; i <= max; i++) {
 				model.setCurrentFloor(i);
-				
+				model.getFloorList().get(i).getInsideTheElevator().addAll(model.getFloorList().get(i-1).getInsideTheElevator());
+				person_out(status,i,model.getCurrentFloor());
+				 person_In(status,i);
+				 creatUnit();		// 임시
 			}
 		} else if(status == -1) {
 			for (int i = currentFloor; i >= min; i--) {
 				model.setCurrentFloor(i);
+				model.getFloorList().get(i).getInsideTheElevator().addAll(model.getFloorList().get(i+1).getInsideTheElevator());
+				 person_out(status,i,model.getCurrentFloor());
+				 person_In(status,i);
+				 creatUnit();		//임시
 			}
 		}
 	}
@@ -79,7 +86,7 @@ public class ElevatorLogic {
 		model.getFloorList().get(rand.waitFloorNum(floorcount)).getWaitPeoples().add(person);//사람을 각 층에 대기하는 사람 리스트에 넣음
 	}	
 }
-	public void peson_In(int status,int n) {				//각 층의 사람들 상태에 맞게 엘레베이터에 탑승시킴
+	public void person_In(int status,int n) {				//각 층의 사람들 상태에 맞게 엘레베이터에 탑승시킴
 		ArrayList<Person> array = new ArrayList<Person>();
 		array.addAll(model.getFloorList().get(n).getWaitPeoples());
 		if(status ==1) {
