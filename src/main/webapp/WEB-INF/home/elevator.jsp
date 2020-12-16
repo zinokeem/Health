@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="/css/reset.css"/>
 <link rel="stylesheet" href="/css/elevator.css"/>
 <script type="text/javascript" src="/js/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="/js/elevatorCore.js"></script>
 <script type="text/javascript" src="/js/elevator.js"></script>
 </head>
 <body>
@@ -17,9 +18,10 @@
 		<input class="start" type="button" value="START"/>
 		<input class="stop" type="button" value="STOP"/>
 		<input class="excute" type="button" value="excute"/>
-		<input class="floor" type="text" value ="0"/>
+		<input class="floor" type="text" value ="5"/>
 	</div>
 	<div id="wrap">
+		<div id="elevator"></div>
 		<table class="elevator">
 			<!--<thead>
 				<tr>
