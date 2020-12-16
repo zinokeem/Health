@@ -7,7 +7,7 @@ import org.znkim.health.model.ElevatorModel;
 public class ElevatorLogic {
 	ElevatorModel model;
 	int max, min;
-	Floor[] floor = new Floor[model.getFloorCount()];
+	//Floor[] floor = new Floor[model.getFloorCount()];
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	public ElevatorLogic() {
@@ -64,7 +64,7 @@ public class ElevatorLogic {
 	public void initFloor() {						// 각 층 초기화
 		int floorcount = model.getFloorCount();
 		for(int i=0; i<floorcount; i++) {
-			floor[i] = new Floor(); 
+			//floor[i] = new Floor(); 
 		}
 	}
 	public void creatUnit() {						// 각 층에 사람을 랜덤으로 넣음
@@ -73,7 +73,7 @@ public class ElevatorLogic {
 	int floorcount = model.getFloorCount();
 	for(int i=0; i<rand.personAssignment(floorcount);i++) {	//랜덤값으로 인원 배정한 만큼 반복
 		person = new Person(rand.perposeFloorNum(floorcount),rand.waitFloorNum(floorcount));	//사람생성
-		floor[rand.waitFloorNum(floorcount)].getWaitPeoples().add(person);	//사람을 각 층에 대기하는 사람 리스트에 넣음
+		//floor[rand.waitFloorNum(floorcount)].getWaitPeoples().add(person);	//사람을 각 층에 대기하는 사람 리스트에 넣음
 	}	
 	}
 }

@@ -15,9 +15,7 @@ import org.znkim.health.model.ElevatorModel;
 
 @Controller
 public class fortest {
-	
-	ElevatorLogic el = new ElevatorLogic();
-	
+
 	@GetMapping("/")
 	public String index() {
 		return "index";
@@ -38,6 +36,7 @@ public class fortest {
 	@RequestMapping(value = "/test" , method = RequestMethod.POST)
 	@ResponseBody
 	public ElevatorModel excute(/*@RequestParam String param*/) {
+		ElevatorLogic el = new ElevatorLogic();
 		el.excute();
 		return el.getServerData();
 	}
