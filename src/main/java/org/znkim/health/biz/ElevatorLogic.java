@@ -75,5 +75,53 @@ public class ElevatorLogic {
 		person = new Person(rand.perposeFloorNum(floorcount),rand.waitFloorNum(floorcount));	//사람생성
 		//floor[rand.waitFloorNum(floorcount)].getWaitPeoples().add(person);	//사람을 각 층에 대기하는 사람 리스트에 넣음
 	}	
+		randomNum rand = new randomNum();
+		Person person;
+		int randomNum=0;
+		int floorcount = model.getFloorCount();
+		for(int i=0; i<rand.personAssignment(floorcount);i++) {	//랜덤값으로 인원 배정한 만큼 반복
+			randomNum = rand.waitFloorNum(floorcount);
+			person = new Person(rand.perposeFloorNum(floorcount),rand.waitFloorNum(floorcount));	//사람생성
+			//floor[randomNum].getWaitPeoples().add(person);	//사람을 각 층에 대기하는 사람 리스트에 넣음
+			compare(randomNum);
+		}	
+	}
+	public void peson_In(int status,int n) {				//각 층의 사람들 상태에 맞게 엘레베이터에 탑승시킴
+		ArrayList<Person> array = new ArrayList<Person>();
+		//array.addAll(floor[n].getWaitPeoples());
+		if(status ==1) {
+			for(Person p : array) {
+				if(1==p.getStatus()) { 
+					//floor[n].getInsideTheElevator().add(p);
+					delay(1);									//한명이 탑승하는 시간 
+				}else continue;
+			}
+		}
+		else if(status == -1) {
+			for(Person p : array) {
+				if(-1==p.getStatus()) { 
+					//floor[n].getInsideTheElevator().add(p);
+					delay(1);
+				}else continue;
+			}
+		}
+	}
+	public void person_out(int status, int n,int currentFloor) {		// 목적 층에 도착한 사람들 엘레베이터에서 제거
+		ArrayList<Person> array = new ArrayList<Person>();
+		//array.addAll(floor[n].getInsideTheElevator());
+		for(Person p : array) {
+		if(currentFloor == p.getPerposeFloor()) {
+			delay(500);
+			//floor[n].getInsideTheElevator().remove(p);
+		}else continue;
+		}
+	}
+	public void delay(int second) {
+		try {
+			Thread.sleep(second);
+		}
+		catch(InterruptedException e) {
+			System.err.format("IOException: %s%n", e);
+		}
 	}
 }
