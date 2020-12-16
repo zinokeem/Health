@@ -32,6 +32,14 @@ function eventHandler() {
 		}
 	});
 	
+	$('div#buttons input.start').click(function() {
+		
+	});
+	
+	$('div#buttons input.stop').click(function() {
+	
+	});
+	
 	$('div#buttons input.excute').click(function() {
 		$.ajax({
 			type: "POST",
